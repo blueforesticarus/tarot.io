@@ -5,6 +5,17 @@
         }
     </style>
     <script>
+        document.addEventListener('readystatechange', event => {
+            // When HTML/DOM elements are ready:
+            if (event.target.readyState === "interactive") {
+                //no real effect
+            }
+
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            if (event.target.readyState === "complete") {
+                document.getElementById("onload").innerHTML = "LOADED"
+            }
+        });
         function toggle(name, evt){
             body = document.body
             if(evt.checked){
@@ -98,6 +109,14 @@
             overflow-y: auto;
             flex: 1;
         }
+        .main td.deck {
+            border-left-style: none;
+            border-right-style: none;
+            padding:1;
+        }
+        .main td.deck:last-child {
+            border-right-style: solid;
+        }
 
 
         .sidenav li a {
@@ -135,7 +154,7 @@
 
         .main td {
             border: 1px solid black;
-            padding: 10 10;
+            padding: 0 10;
         }
         .main td.head {
             text-align: center;
@@ -143,20 +162,20 @@
 
         .main table {
             border-collapse: collapse;
+            margin:5px;
         }
 
         body[sidenav] .sidenav {
             display: none;
         }
 
-    .img_thoth img {
+    .img_thoth img , .img_marseilles img, .img_fuego img {
         box-sizing: border-box;
-        padding: 5%;
+        padding: 5% 0;
     }
 
-    .img_fuego img {
-        box-sizing: border-box;
-        padding: 4% 6% 6% 6%;
+    .main #top {
+        text-align: center;
     }
 
     </style>
@@ -168,27 +187,27 @@
                 |
                 <span class="inner">
                 <span>
-                    <a href="1">A</a>
-                    <a href="2">2</a>
-                    <a href="3">3</a>
-                    <a href="4">4</a>
-                    <a href="5">5</a>
-                    <a href="6">6</a>
-                    <a href="7">7</a>
-                    <a href="8">8</a>
-                    <a href="9">9</a>
-                    <a href="10">10</a>
-                    <a href="page">Pa</a>
-                    <a href="knight">Kn</a>
-                    <a href="queen">Qu</a>
-                    <a href="king">Ki</a>
+                    <a href="#c1">A</a>
+                    <a href="#c2">2</a>
+                    <a href="#c3">3</a>
+                    <a href="#c4">4</a>
+                    <a href="#c5">5</a>
+                    <a href="#c6">6</a>
+                    <a href="#c7">7</a>
+                    <a href="#c8">8</a>
+                    <a href="#c9">9</a>
+                    <a href="#c10">10</a>
+                    <a href="#page">Pa</a>
+                    <a href="#knight">Kn</a>
+                    <a href="#queen">Qu</a>
+                    <a href="#king">Ki</a>
                 </span>
                 |
                 <span>
-                <a href="wands">wands</a>
-                <a href="swords">swords</a>
-                <a href="cups">cups</a>
-                <a href="coins">coins</a>
+                <a href="#wands">wands</a>
+                <a href="#swords">swords</a>
+                <a href="#cups">cups</a>
+                <a href="#coins">coins</a>
                 </span>
                 |
                 <span>
@@ -213,7 +232,7 @@
                 <a href="#XVIII">XVIII</a>
                 <a href="#XIX">XIX</a>
                 <a href="#XX">XX</a>
-                <a href="#XXI">XXI</a>
+                <a title="The World" href="#XXI">XXI</a>
                 </span>
                 </span>
                 <span class="input"><input id="sizer" value="20" type="text" onchange="sizer(this)"></span>
@@ -222,3591 +241,1223 @@
                 <div class="sidenav">
                     <ul>
                         
-            <li class="trumps">
+            <li class="card trumps">
                 <a href="#F"><div>
                     <span>The Fool</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#I"><div>
                     <span>The Magician</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#II"><div>
                     <span>The Priestess</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#III"><div>
                     <span>The Empress</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#IV"><div>
                     <span>The Emperor</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#V"><div>
                     <span>The Heirophant</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#VI"><div>
                     <span>The Lovers</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#VII"><div>
                     <span>The Chariot</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#VIII"><div>
                     <span>Strength</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#IX"><div>
                     <span>The Hermit</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#X"><div>
                     <span>Wheel of Fortune</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XI"><div>
                     <span>Justice</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XII"><div>
                     <span>Hanged Man</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XIII"><div>
                     <span>Death</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XIV"><div>
                     <span>Temperance</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XV"><div>
                     <span>The Devil</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XVI"><div>
                     <span>The Tower</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XVII"><div>
                     <span>The Star</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XVIII"><div>
                     <span>The Moon</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XIX"><div>
                     <span>The Sun</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XX"><div>
                     <span>Judgement</span>
                 </div></a>
             </li>
-
-            <li class="trumps">
+        
+            <li class="card trumps">
                 <a href="#XXI"><div>
                     <span>The World</span>
                 </div></a>
             </li>
-
-                <li class="c1 wands">
-                    <a href="#c1_wands"><div>
-                        <span>Ace</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c2 wands">
-                    <a href="#c2_wands"><div>
-                        <span>Two</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c3 wands">
-                    <a href="#c3_wands"><div>
-                        <span>Three</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c4 wands">
-                    <a href="#c4_wands"><div>
-                        <span>Four</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c5 wands">
-                    <a href="#c5_wands"><div>
-                        <span>Five</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c6 wands">
-                    <a href="#c6_wands"><div>
-                        <span>Six</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c7 wands">
-                    <a href="#c7_wands"><div>
-                        <span>Seven</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c8 wands">
-                    <a href="#c8_wands"><div>
-                        <span>Eight</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c9 wands">
-                    <a href="#c9_wands"><div>
-                        <span>Nine</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c10 wands">
-                    <a href="#c10_wands"><div>
-                        <span>Ten</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="page wands">
-                    <a href="#page_wands"><div>
-                        <span>Page</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="knight wands">
-                    <a href="#knight_wands"><div>
-                        <span>Knight</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="queen wands">
-                    <a href="#queen_wands"><div>
-                        <span>Queen</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="king wands">
-                    <a href="#king_wands"><div>
-                        <span>King</span>
-                        of
-                        <span>Wands</span>
-                    </div></a>
-                </li>
-
-                <li class="c1 swords">
-                    <a href="#c1_swords"><div>
-                        <span>Ace</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c2 swords">
-                    <a href="#c2_swords"><div>
-                        <span>Two</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c3 swords">
-                    <a href="#c3_swords"><div>
-                        <span>Three</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c4 swords">
-                    <a href="#c4_swords"><div>
-                        <span>Four</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c5 swords">
-                    <a href="#c5_swords"><div>
-                        <span>Five</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c6 swords">
-                    <a href="#c6_swords"><div>
-                        <span>Six</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c7 swords">
-                    <a href="#c7_swords"><div>
-                        <span>Seven</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c8 swords">
-                    <a href="#c8_swords"><div>
-                        <span>Eight</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c9 swords">
-                    <a href="#c9_swords"><div>
-                        <span>Nine</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c10 swords">
-                    <a href="#c10_swords"><div>
-                        <span>Ten</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="page swords">
-                    <a href="#page_swords"><div>
-                        <span>Page</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="knight swords">
-                    <a href="#knight_swords"><div>
-                        <span>Knight</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="queen swords">
-                    <a href="#queen_swords"><div>
-                        <span>Queen</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="king swords">
-                    <a href="#king_swords"><div>
-                        <span>King</span>
-                        of
-                        <span>Swords</span>
-                    </div></a>
-                </li>
-
-                <li class="c1 cups">
-                    <a href="#c1_cups"><div>
-                        <span>Ace</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c2 cups">
-                    <a href="#c2_cups"><div>
-                        <span>Two</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c3 cups">
-                    <a href="#c3_cups"><div>
-                        <span>Three</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c4 cups">
-                    <a href="#c4_cups"><div>
-                        <span>Four</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c5 cups">
-                    <a href="#c5_cups"><div>
-                        <span>Five</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c6 cups">
-                    <a href="#c6_cups"><div>
-                        <span>Six</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c7 cups">
-                    <a href="#c7_cups"><div>
-                        <span>Seven</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c8 cups">
-                    <a href="#c8_cups"><div>
-                        <span>Eight</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c9 cups">
-                    <a href="#c9_cups"><div>
-                        <span>Nine</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c10 cups">
-                    <a href="#c10_cups"><div>
-                        <span>Ten</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="page cups">
-                    <a href="#page_cups"><div>
-                        <span>Page</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="knight cups">
-                    <a href="#knight_cups"><div>
-                        <span>Knight</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="queen cups">
-                    <a href="#queen_cups"><div>
-                        <span>Queen</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="king cups">
-                    <a href="#king_cups"><div>
-                        <span>King</span>
-                        of
-                        <span>Cups</span>
-                    </div></a>
-                </li>
-
-                <li class="c1 coins">
-                    <a href="#c1_coins"><div>
-                        <span>Ace</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c2 coins">
-                    <a href="#c2_coins"><div>
-                        <span>Two</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c3 coins">
-                    <a href="#c3_coins"><div>
-                        <span>Three</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c4 coins">
-                    <a href="#c4_coins"><div>
-                        <span>Four</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c5 coins">
-                    <a href="#c5_coins"><div>
-                        <span>Five</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c6 coins">
-                    <a href="#c6_coins"><div>
-                        <span>Six</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c7 coins">
-                    <a href="#c7_coins"><div>
-                        <span>Seven</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c8 coins">
-                    <a href="#c8_coins"><div>
-                        <span>Eight</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c9 coins">
-                    <a href="#c9_coins"><div>
-                        <span>Nine</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="c10 coins">
-                    <a href="#c10_coins"><div>
-                        <span>Ten</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="page coins">
-                    <a href="#page_coins"><div>
-                        <span>Page</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="knight coins">
-                    <a href="#knight_coins"><div>
-                        <span>Knight</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="queen coins">
-                    <a href="#queen_coins"><div>
-                        <span>Queen</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
-
-                <li class="king coins">
-                    <a href="#king_coins"><div>
-                        <span>King</span>
-                        of
-                        <span>Coins</span>
-                    </div></a>
-                </li>
+        
+            <li class="card minors wands c1">
+                <a href="#c1_wands"><div>
+                    <span>Ace of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c2">
+                <a href="#c2_wands"><div>
+                    <span>Two of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c3">
+                <a href="#c3_wands"><div>
+                    <span>Three of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c4">
+                <a href="#c4_wands"><div>
+                    <span>Four of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c5">
+                <a href="#c5_wands"><div>
+                    <span>Five of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c6">
+                <a href="#c6_wands"><div>
+                    <span>Six of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c7">
+                <a href="#c7_wands"><div>
+                    <span>Seven of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c8">
+                <a href="#c8_wands"><div>
+                    <span>Eight of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c9">
+                <a href="#c9_wands"><div>
+                    <span>Nine of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands c10">
+                <a href="#c10_wands"><div>
+                    <span>Ten of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands page">
+                <a href="#page_wands"><div>
+                    <span>Page of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands knight">
+                <a href="#knight_wands"><div>
+                    <span>Knight of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands queen">
+                <a href="#queen_wands"><div>
+                    <span>Queen of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors wands king">
+                <a href="#king_wands"><div>
+                    <span>King of Wands</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c1">
+                <a href="#c1_swords"><div>
+                    <span>Ace of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c2">
+                <a href="#c2_swords"><div>
+                    <span>Two of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c3">
+                <a href="#c3_swords"><div>
+                    <span>Three of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c4">
+                <a href="#c4_swords"><div>
+                    <span>Four of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c5">
+                <a href="#c5_swords"><div>
+                    <span>Five of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c6">
+                <a href="#c6_swords"><div>
+                    <span>Six of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c7">
+                <a href="#c7_swords"><div>
+                    <span>Seven of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c8">
+                <a href="#c8_swords"><div>
+                    <span>Eight of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c9">
+                <a href="#c9_swords"><div>
+                    <span>Nine of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords c10">
+                <a href="#c10_swords"><div>
+                    <span>Ten of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords page">
+                <a href="#page_swords"><div>
+                    <span>Page of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords knight">
+                <a href="#knight_swords"><div>
+                    <span>Knight of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords queen">
+                <a href="#queen_swords"><div>
+                    <span>Queen of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors swords king">
+                <a href="#king_swords"><div>
+                    <span>King of Swords</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c1">
+                <a href="#c1_cups"><div>
+                    <span>Ace of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c2">
+                <a href="#c2_cups"><div>
+                    <span>Two of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c3">
+                <a href="#c3_cups"><div>
+                    <span>Three of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c4">
+                <a href="#c4_cups"><div>
+                    <span>Four of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c5">
+                <a href="#c5_cups"><div>
+                    <span>Five of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c6">
+                <a href="#c6_cups"><div>
+                    <span>Six of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c7">
+                <a href="#c7_cups"><div>
+                    <span>Seven of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c8">
+                <a href="#c8_cups"><div>
+                    <span>Eight of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c9">
+                <a href="#c9_cups"><div>
+                    <span>Nine of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups c10">
+                <a href="#c10_cups"><div>
+                    <span>Ten of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups page">
+                <a href="#page_cups"><div>
+                    <span>Page of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups knight">
+                <a href="#knight_cups"><div>
+                    <span>Knight of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups queen">
+                <a href="#queen_cups"><div>
+                    <span>Queen of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors cups king">
+                <a href="#king_cups"><div>
+                    <span>King of Cups</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c1">
+                <a href="#c1_coins"><div>
+                    <span>Ace of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c2">
+                <a href="#c2_coins"><div>
+                    <span>Two of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c3">
+                <a href="#c3_coins"><div>
+                    <span>Three of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c4">
+                <a href="#c4_coins"><div>
+                    <span>Four of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c5">
+                <a href="#c5_coins"><div>
+                    <span>Five of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c6">
+                <a href="#c6_coins"><div>
+                    <span>Six of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c7">
+                <a href="#c7_coins"><div>
+                    <span>Seven of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c8">
+                <a href="#c8_coins"><div>
+                    <span>Eight of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c9">
+                <a href="#c9_coins"><div>
+                    <span>Nine of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins c10">
+                <a href="#c10_coins"><div>
+                    <span>Ten of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins page">
+                <a href="#page_coins"><div>
+                    <span>Page of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins knight">
+                <a href="#knight_coins"><div>
+                    <span>Knight of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins queen">
+                <a href="#queen_coins"><div>
+                    <span>Queen of Coins</span>
+                </div></a>
+            </li>
+        
+            <li class="card minors coins king">
+                <a href="#king_coins"><div>
+                    <span>King of Coins</span>
+                </div></a>
+            </li>
+        
                     </ul>
                 </div>
                 <div class="main">
+                    <div id="top">
+                        <h1>TAROT</h1>
+                        <div id="onload">loading...</div>
+                    </div>
                     <table id="mt">
                         
-<tr sortA="0" sortB="0" id="F" class="trumps" >
-    
-<td class="head" >
-    
+            <tr sortA=0 sortB=0 class="card trumps" id="F"><td class="head">
             <a href="#F">The Fool</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Beginnings, innocence, spontaneity, a free spirit
+        </td><td class="info txt"><p>UPRIGHT: Beginnings, innocence, spontaneity, a free spirit
 <br><br>
 REVERSED: Holding back, recklessness, risk-taking
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_122">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_44">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_200">
-</td>
-
-</tr>
-
-
-<tr sortA="1" sortB="1" id="I" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#I">The Magician</a>
+</p></td><td class="img_rider img"><img class="card" id="I145"></td><td class="img_thoth img"><img class="card" id="I67"></td><td class="img_marseilles img"><img class="card" id="I223"></td><td class="img_fuego img"><img class="card" id="I301"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Manifestation, resourcefulness, power, inspired action
+            <tr sortA=1 sortB=1 class="card trumps" id="I"><td class="head">
+            <a href="#I">The Magician</a>
+        </td><td class="info txt"><p>UPRIGHT: Manifestation, resourcefulness, power, inspired action
 <br><br>
 REVERSED: Manipulation, poor planning, untapped talents
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_98">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_20">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_176">
-</td>
-
-</tr>
-
-
-<tr sortA="2" sortB="2" id="II" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#II">The Priestess</a>
+</p></td><td class="img_rider img"><img class="card" id="I99"></td><td class="img_thoth img"><img class="card" id="I21"></td><td class="img_marseilles img"><img class="card" id="I177"></td><td class="img_fuego img"><img class="card" id="I255"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Intuition, sacred knowledge, divine feminine, the subconscious mind
+            <tr sortA=2 sortB=2 class="card trumps" id="II"><td class="head">
+            <a href="#II">The Priestess</a>
+        </td><td class="info txt"><p>UPRIGHT: Intuition, sacred knowledge, divine feminine, the subconscious mind
 <br><br>
 REVERSED: Secrets, disconnected from intuition, withdrawal and silence
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_94">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_16">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_172">
-</td>
-
-</tr>
-
-
-<tr sortA="3" sortB="3" id="III" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#III">The Empress</a>
+</p></td><td class="img_rider img"><img class="card" id="I92"></td><td class="img_thoth img"><img class="card" id="I14"></td><td class="img_marseilles img"><img class="card" id="I170"></td><td class="img_fuego img"><img class="card" id="I248"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Femininity, beauty, nature, nurturing, abundance
+            <tr sortA=3 sortB=3 class="card trumps" id="III"><td class="head">
+            <a href="#III">The Empress</a>
+        </td><td class="info txt"><p>UPRIGHT: Femininity, beauty, nature, nurturing, abundance
 <br><br>
 REVERSED: Creative block, dependence on others
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_99">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_21">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_177">
-</td>
-
-</tr>
-
-
-<tr sortA="4" sortB="4" id="IV" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#IV">The Emperor</a>
+</p></td><td class="img_rider img"><img class="card" id="I121"></td><td class="img_thoth img"><img class="card" id="I43"></td><td class="img_marseilles img"><img class="card" id="I199"></td><td class="img_fuego img"><img class="card" id="I277"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Authority, establishment, structure, a father figure
+            <tr sortA=4 sortB=4 class="card trumps" id="IV"><td class="head">
+            <a href="#IV">The Emperor</a>
+        </td><td class="info txt"><p>UPRIGHT: Authority, establishment, structure, a father figure
 <br><br>
 REVERSED: Domination, excessive control, lack of discipline, inflexibility
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_155">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_77">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_233">
-</td>
-
-</tr>
-
-
-<tr sortA="5" sortB="5" id="V" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#V">The Heirophant</a>
+</p></td><td class="img_rider img"><img class="card" id="I82"></td><td class="img_thoth img"><img class="card" id="I4"></td><td class="img_marseilles img"><img class="card" id="I160"></td><td class="img_fuego img"><img class="card" id="I238"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Spiritual wisdom, religious beliefs, conformity, tradition,institutions
+            <tr sortA=5 sortB=5 class="card trumps" id="V"><td class="head">
+            <a href="#V">The Heirophant</a>
+        </td><td class="info txt"><p>UPRIGHT: Spiritual wisdom, religious beliefs, conformity, tradition,institutions
 <br><br>
 REVERSED: Personal beliefs, freedom, challenging the status quo
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_134">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_54">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_210">
-</td>
-
-</tr>
-
-
-<tr sortA="6" sortB="6" id="VI" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#VI">The Lovers</a>
+</p></td><td class="img_rider img"><img class="card" id="I88"></td><td class="img_thoth img"><img class="card" id="I10"></td><td class="img_marseilles img"><img class="card" id="I166"></td><td class="img_fuego img"><img class="card" id="I244"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Love, harmony, relationships, values alignment, choices
+            <tr sortA=6 sortB=6 class="card trumps" id="VI"><td class="head">
+            <a href="#VI">The Lovers</a>
+        </td><td class="info txt"><p>UPRIGHT: Love, harmony, relationships, values alignment, choices
 <br><br>
 REVERSED: Self-love, disharmony, imbalance, misalignment of values
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_147">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_69">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_225">
-</td>
-
-</tr>
-
-
-<tr sortA="7" sortB="7" id="VII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#VII">The Chariot</a>
+</p></td><td class="img_rider img"><img class="card" id="I118"></td><td class="img_thoth img"><img class="card" id="I40"></td><td class="img_marseilles img"><img class="card" id="I196"></td><td class="img_fuego img"><img class="card" id="I274"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Control, willpower, success, action, determination
+            <tr sortA=7 sortB=7 class="card trumps" id="VII"><td class="head">
+            <a href="#VII">The Chariot</a>
+        </td><td class="info txt"><p>UPRIGHT: Control, willpower, success, action, determination
 <br><br>
 REVERSED: Self-discipline, opposition, lack of direction
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_114">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_36">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_192">
-</td>
-
-</tr>
-
-
-<tr sortA="8" sortB="8" id="VIII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#VIII">Strength</a>
+</p></td><td class="img_rider img"><img class="card" id="I87"></td><td class="img_thoth img"><img class="card" id="I9"></td><td class="img_marseilles img"><img class="card" id="I165"></td><td class="img_fuego img"><img class="card" id="I243"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Strength, courage, persuasion, influence, compassion
+            <tr sortA=8 sortB=8 class="card trumps" id="VIII"><td class="head">
+            <a href="#VIII">Strength</a>
+        </td><td class="info txt"><p>UPRIGHT: Strength, courage, persuasion, influence, compassion
 <br><br>
 REVERSED: Inner strength, self-doubt, low energy, raw emotion
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_107">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_29">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_185">
-</td>
-
-</tr>
-
-
-<tr sortA="9" sortB="9" id="IX" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#IX">The Hermit</a>
+</p></td><td class="img_rider img"><img class="card" id="I111"></td><td class="img_thoth img"><img class="card" id="I33"></td><td class="img_marseilles img"><img class="card" id="I189"></td><td class="img_fuego img"><img class="card" id="I267"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Soul-searching, introspection, being alone, inner guidance
+            <tr sortA=9 sortB=9 class="card trumps" id="IX"><td class="head">
+            <a href="#IX">The Hermit</a>
+        </td><td class="info txt"><p>UPRIGHT: Soul-searching, introspection, being alone, inner guidance
 <br><br>
 REVERSED: Isolation, loneliness, withdrawal
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_87">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_9">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_165">
-</td>
-
-</tr>
-
-
-<tr sortA="10" sortB="10" id="X" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#X">Wheel of Fortune</a>
+</p></td><td class="img_rider img"><img class="card" id="I127"></td><td class="img_thoth img"><img class="card" id="I49"></td><td class="img_marseilles img"><img class="card" id="I205"></td><td class="img_fuego img"><img class="card" id="I283"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Good luck, karma, life cycles, destiny, a turning point
+            <tr sortA=10 sortB=10 class="card trumps" id="X"><td class="head">
+            <a href="#X">Wheel of Fortune</a>
+        </td><td class="info txt"><p>UPRIGHT: Good luck, karma, life cycles, destiny, a turning point
 <br><br>
 REVERSED: Bad luck, resistance to change, breaking cycles
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_120">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_42">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_198">
-</td>
-
-</tr>
-
-
-<tr sortA="11" sortB="11" id="XI" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XI">Justice</a>
+</p></td><td class="img_rider img"><img class="card" id="I96"></td><td class="img_thoth img"><img class="card" id="I18"></td><td class="img_marseilles img"><img class="card" id="I174"></td><td class="img_fuego img"><img class="card" id="I252"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Justice, fairness, truth, cause and effect, law
+            <tr sortA=11 sortB=11 class="card trumps" id="XI"><td class="head">
+            <a href="#XI">Justice</a>
+        </td><td class="info txt"><p>UPRIGHT: Justice, fairness, truth, cause and effect, law
 <br><br>
 REVERSED: Unfairness, lack of accountability, dishonesty
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_104">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_26">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_182">
-</td>
-
-</tr>
-
-
-<tr sortA="12" sortB="12" id="XII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XII">Hanged Man</a>
+</p></td><td class="img_rider img"><img class="card" id="I123"></td><td class="img_thoth img"><img class="card" id="I45"></td><td class="img_marseilles img"><img class="card" id="I201"></td><td class="img_fuego img"><img class="card" id="I279"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Pause, surrender, letting go, new perspectives
+            <tr sortA=12 sortB=12 class="card trumps" id="XII"><td class="head">
+            <a href="#XII">Hanged Man</a>
+        </td><td class="info txt"><p>UPRIGHT: Pause, surrender, letting go, new perspectives
 <br><br>
 REVERSED: Delays, resistance, stalling, indecision
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_129">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_50">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_206">
-</td>
-
-</tr>
-
-
-<tr sortA="13" sortB="13" id="XIII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XIII">Death</a>
+</p></td><td class="img_rider img"><img class="card" id="I93"></td><td class="img_thoth img"><img class="card" id="I15"></td><td class="img_marseilles img"><img class="card" id="I171"></td><td class="img_fuego img"><img class="card" id="I249"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Endings, change, transformation, transition
+            <tr sortA=13 sortB=13 class="card trumps" id="XIII"><td class="head">
+            <a href="#XIII">Death</a>
+        </td><td class="info txt"><p>UPRIGHT: Endings, change, transformation, transition
 <br><br>
 REVERSED: Resistance to change, personal transformation, inner purging
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_127">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_49">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_205">
-</td>
-
-</tr>
-
-
-<tr sortA="14" sortB="14" id="XIV" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XIV">Temperance</a>
+</p></td><td class="img_rider img"><img class="card" id="I91"></td><td class="img_thoth img"><img class="card" id="I13"></td><td class="img_marseilles img"><img class="card" id="I169"></td><td class="img_fuego img"><img class="card" id="I247"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Balance, moderation, patience, purpose
+            <tr sortA=14 sortB=14 class="card trumps" id="XIV"><td class="head">
+            <a href="#XIV">Temperance</a>
+        </td><td class="info txt"><p>UPRIGHT: Balance, moderation, patience, purpose
 <br><br>
 REVERSED: Imbalance, excess, self-healing, re-alignment
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_144">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_65">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_221">
-</td>
-
-</tr>
-
-
-<tr sortA="15" sortB="15" id="XV" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XV">The Devil</a>
+</p></td><td class="img_rider img"><img class="card" id="I150"></td><td class="img_thoth img"><img class="card" id="I72"></td><td class="img_marseilles img"><img class="card" id="I228"></td><td class="img_fuego img"><img class="card" id="I306"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Shadow self, attachment, addiction, restriction, sexuality
+            <tr sortA=15 sortB=15 class="card trumps" id="XV"><td class="head">
+            <a href="#XV">The Devil</a>
+        </td><td class="info txt"><p>UPRIGHT: Shadow self, attachment, addiction, restriction, sexuality
 <br><br>
 REVERSED: Releasing limiting beliefs, exploring dark thoughts, detachment
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_128">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_68">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_224">
-</td>
-
-</tr>
-
-
-<tr sortA="16" sortB="16" id="XVI" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XVI">The Tower</a>
+</p></td><td class="img_rider img"><img class="card" id="I130"></td><td class="img_thoth img"><img class="card" id="I52"></td><td class="img_marseilles img"><img class="card" id="I208"></td><td class="img_fuego img"><img class="card" id="I286"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Sudden change, upheaval, chaos, revelation, awakening
+            <tr sortA=16 sortB=16 class="card trumps" id="XVI"><td class="head">
+            <a href="#XVI">The Tower</a>
+        </td><td class="info txt"><p>UPRIGHT: Sudden change, upheaval, chaos, revelation, awakening
 <br><br>
 REVERSED: Personal transformation, fear of change, averting disaster
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_85">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_7">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_163">
-</td>
-
-</tr>
-
-
-<tr sortA="17" sortB="17" id="XVII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XVII">The Star</a>
+</p></td><td class="img_rider img"><img class="card" id="I131"></td><td class="img_thoth img"><img class="card" id="I53"></td><td class="img_marseilles img"><img class="card" id="I209"></td><td class="img_fuego img"><img class="card" id="I287"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Hope, faith, purpose, renewal, spirituality
+            <tr sortA=17 sortB=17 class="card trumps" id="XVII"><td class="head">
+            <a href="#XVII">The Star</a>
+        </td><td class="info txt"><p>UPRIGHT: Hope, faith, purpose, renewal, spirituality
 <br><br>
 REVERSED: Lack of faith, despair, self-trust, disconnection
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_136">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_56">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_212">
-</td>
-
-</tr>
-
-
-<tr sortA="18" sortB="18" id="XVIII" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XVIII">The Moon</a>
+</p></td><td class="img_rider img"><img class="card" id="I135"></td><td class="img_thoth img"><img class="card" id="I57"></td><td class="img_marseilles img"><img class="card" id="I213"></td><td class="img_fuego img"><img class="card" id="I291"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Illusion, fear, anxiety, subconscious, intuition
+            <tr sortA=18 sortB=18 class="card trumps" id="XVIII"><td class="head">
+            <a href="#XVIII">The Moon</a>
+        </td><td class="info txt"><p>UPRIGHT: Illusion, fear, anxiety, subconscious, intuition
 <br><br>
 REVERSED: Release of fear, repressed emotion, inner confusion
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_156">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_78">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_234">
-</td>
-
-</tr>
-
-
-<tr sortA="19" sortB="19" id="XIX" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XIX">The Sun</a>
+</p></td><td class="img_rider img"><img class="card" id="I140"></td><td class="img_thoth img"><img class="card" id="I62"></td><td class="img_marseilles img"><img class="card" id="I218"></td><td class="img_fuego img"><img class="card" id="I296"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Positivity, fun, warmth, success, vitality
+            <tr sortA=19 sortB=19 class="card trumps" id="XIX"><td class="head">
+            <a href="#XIX">The Sun</a>
+        </td><td class="info txt"><p>UPRIGHT: Positivity, fun, warmth, success, vitality
 <br><br>
 REVERSED: Inner child, feeling down, overly optimistic
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_89">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_11">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_167">
-</td>
-
-</tr>
-
-
-<tr sortA="20" sortB="20" id="XX" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XX">Judgement</a>
+</p></td><td class="img_rider img"><img class="card" id="I94"></td><td class="img_thoth img"><img class="card" id="I16"></td><td class="img_marseilles img"><img class="card" id="I172"></td><td class="img_fuego img"><img class="card" id="I250"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Judgement, rebirth, inner calling, absolution
+            <tr sortA=20 sortB=20 class="card trumps" id="XX"><td class="head">
+            <a href="#XX">Judgement</a>
+        </td><td class="info txt"><p>UPRIGHT: Judgement, rebirth, inner calling, absolution
 <br><br>
 REVERSED: Self-doubt, inner critic, ignoring the call
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_90">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_12">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_168">
-</td>
-
-</tr>
-
-
-<tr sortA="21" sortB="21" id="XXI" class="trumps" >
-    
-<td class="head" >
-    
-            <a href="#XXI">The World</a>
+</p></td><td class="img_rider img"><img class="card" id="I84"></td><td class="img_thoth img"><img class="card" id="I6"></td><td class="img_marseilles img"><img class="card" id="I162"></td><td class="img_fuego img"><img class="card" id="I240"></td></tr>
         
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Completion, integration, accomplishment, travel
+            <tr sortA=21 sortB=21 class="card trumps" id="XXI"><td class="head">
+            <a href="#XXI">The World</a>
+        </td><td class="info txt"><p>UPRIGHT: Completion, integration, accomplishment, travel
 <br><br>
 REVERSED: Seeking personal closure, short-cuts, delays
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_88">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_10">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_166">
-</td>
-
-</tr>
-
-
-<tr sortA="22" sortB="22" id="c1_wands" class="c1 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I141"></td><td class="img_thoth img"><img class="card" id="I63"></td><td class="img_marseilles img"><img class="card" id="I219"></td><td class="img_fuego img"><img class="card" id="I297"></td></tr>
+        
+            <tr sortA=22 sortB=22 class="card minors wands c1" id="c1_wands"><td class="head">
             <a href="#c1">Ace</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Inspiration, new opportunities, growth, potential
+        </td><td class="info txt"><p>UPRIGHT: Inspiration, new opportunities, growth, potential
 <br><br>
 REVERSED: An emerging idea, lack of direction, distractions, delays
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_101">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_23">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_179">
-</td>
-
-</tr>
-
-
-<tr sortA="23" sortB="26" id="c2_wands" class="c2 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I147"></td><td class="img_thoth img"><img class="card" id="I69"></td><td class="img_marseilles img"><img class="card" id="I225"></td><td class="img_fuego img"><img class="card" id="I303"></td></tr>
+        
+            <tr sortA=23 sortB=26 class="card minors wands c2" id="c2_wands"><td class="head">
             <a href="#c2">Two</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Future planning, progress, decisions, discovery
+        </td><td class="info txt"><p>UPRIGHT: Future planning, progress, decisions, discovery
 <br><br>
 REVERSED: Personal goals, inner alignment, fear of unknown, lack of planning
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_108">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_30">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_186">
-</td>
-
-</tr>
-
-
-<tr sortA="24" sortB="30" id="c3_wands" class="c3 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I86"></td><td class="img_thoth img"><img class="card" id="I8"></td><td class="img_marseilles img"><img class="card" id="I164"></td><td class="img_fuego img"><img class="card" id="I242"></td></tr>
+        
+            <tr sortA=24 sortB=30 class="card minors wands c3" id="c3_wands"><td class="head">
             <a href="#c3">Three</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Progress, expansion, foresight, overseas opportunities
+        </td><td class="info txt"><p>UPRIGHT: Progress, expansion, foresight, overseas opportunities
 <br><br>
 REVERSED: Playing small, lack of foresight, unexpected delays
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_135">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_55">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_211">
-</td>
-
-</tr>
-
-
-<tr sortA="25" sortB="34" id="c4_wands" class="c4 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I137"></td><td class="img_thoth img"><img class="card" id="I59"></td><td class="img_marseilles img"><img class="card" id="I215"></td><td class="img_fuego img"><img class="card" id="I293"></td></tr>
+        
+            <tr sortA=25 sortB=34 class="card minors wands c4" id="c4_wands"><td class="head">
             <a href="#c4">Four</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Celebration, joy, harmony, relaxation, homecoming
+        </td><td class="info txt"><p>UPRIGHT: Celebration, joy, harmony, relaxation, homecoming
 <br><br>
 REVERSED: Personal celebration, inner harmony, conflict with others, transition.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_92">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_14">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_170">
-</td>
-
-</tr>
-
-
-<tr sortA="26" sortB="38" id="c5_wands" class="c5 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I97"></td><td class="img_thoth img"><img class="card" id="I19"></td><td class="img_marseilles img"><img class="card" id="I175"></td><td class="img_fuego img"><img class="card" id="I253"></td></tr>
+        
+            <tr sortA=26 sortB=38 class="card minors wands c5" id="c5_wands"><td class="head">
             <a href="#c5">Five</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Conflict, disagreements, competition, tension, diversity
+        </td><td class="info txt"><p>UPRIGHT: Conflict, disagreements, competition, tension, diversity
 <br><br>
 REVERSED: Inner conflict, conflict avoidance, tension release
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_105">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_27">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_183">
-</td>
-
-</tr>
-
-
-<tr sortA="27" sortB="42" id="c6_wands" class="c6 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I108"></td><td class="img_thoth img"><img class="card" id="I30"></td><td class="img_marseilles img"><img class="card" id="I186"></td><td class="img_fuego img"><img class="card" id="I264"></td></tr>
+        
+            <tr sortA=27 sortB=42 class="card minors wands c6" id="c6_wands"><td class="head">
             <a href="#c6">Six</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Success, public recognition, progress, self-confidence
+        </td><td class="info txt"><p>UPRIGHT: Success, public recognition, progress, self-confidence
 <br><br>
 REVERSED: Private achievement, personal definition of success, fall from grace, egotism
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_146">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_67">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_223">
-</td>
-
-</tr>
-
-
-<tr sortA="28" sortB="46" id="c7_wands" class="c7 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I151"></td><td class="img_thoth img"><img class="card" id="I73"></td><td class="img_marseilles img"><img class="card" id="I229"></td><td class="img_fuego img"><img class="card" id="I307"></td></tr>
+        
+            <tr sortA=28 sortB=46 class="card minors wands c7" id="c7_wands"><td class="head">
             <a href="#c7">Seven</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Challenge, competition, protection, perseverance
+        </td><td class="info txt"><p>UPRIGHT: Challenge, competition, protection, perseverance
 <br><br>
 REVERSED: Exhaustion, giving up, overwhelmed
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_140">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_60">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_216">
-</td>
-
-</tr>
-
-
-<tr sortA="29" sortB="50" id="c8_wands" class="c8 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I95"></td><td class="img_thoth img"><img class="card" id="I17"></td><td class="img_marseilles img"><img class="card" id="I173"></td><td class="img_fuego img"><img class="card" id="I251"></td></tr>
+        
+            <tr sortA=29 sortB=50 class="card minors wands c8" id="c8_wands"><td class="head">
             <a href="#c8">Eight</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Movement, fast paced change, action, alignment, air travel
+        </td><td class="info txt"><p>UPRIGHT: Movement, fast paced change, action, alignment, air travel
 <br><br>
 REVERSED: Delays, frustration, resisting change, internal alignment
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_96">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_18">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_174">
-</td>
-
-</tr>
-
-
-<tr sortA="30" sortB="54" id="c9_wands" class="c9 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I148"></td><td class="img_thoth img"><img class="card" id="I70"></td><td class="img_marseilles img"><img class="card" id="I226"></td><td class="img_fuego img"><img class="card" id="I304"></td></tr>
+        
+            <tr sortA=30 sortB=54 class="card minors wands c9" id="c9_wands"><td class="head">
             <a href="#c9">Nine</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Resilience, courage, persistence, test of faith, boundaries
+        </td><td class="info txt"><p>UPRIGHT: Resilience, courage, persistence, test of faith, boundaries
 <br><br>
 REVERSED: Inner resources, struggle, overwhelm, defensive, paranoia
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_139">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_59">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_215">
-</td>
-
-</tr>
-
-
-<tr sortA="31" sortB="58" id="c10_wands" class="c10 wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I102"></td><td class="img_thoth img"><img class="card" id="I24"></td><td class="img_marseilles img"><img class="card" id="I180"></td><td class="img_fuego img"><img class="card" id="I258"></td></tr>
+        
+            <tr sortA=31 sortB=58 class="card minors wands c10" id="c10_wands"><td class="head">
             <a href="#c10">Ten</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Burden, extra responsibility, hard work, completion
+        </td><td class="info txt"><p>UPRIGHT: Burden, extra responsibility, hard work, completion
 <br><br>
 REVERSED: Doing it all, carrying the burden, delegation, release
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_148">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_70">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_226">
-</td>
-
-</tr>
-
-
-<tr sortA="32" sortB="62" id="page_wands" class="page wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I149"></td><td class="img_thoth img"><img class="card" id="I71"></td><td class="img_marseilles img"><img class="card" id="I227"></td><td class="img_fuego img"><img class="card" id="I305"></td></tr>
+        
+            <tr sortA=32 sortB=62 class="card minors wands page" id="page_wands"><td class="head">
             <a href="#page">Page</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Inspiration, ideas, discovery, limitless potential, free spirit
+        </td><td class="info txt"><p>UPRIGHT: Inspiration, ideas, discovery, limitless potential, free spirit
 <br><br>
 REVERSED: Newly-formed ideas, redirecting energy, self-limiting beliefs, a spiritual 
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_119">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_41">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_197">
-</td>
-
-</tr>
-
-
-<tr sortA="33" sortB="66" id="knight_wands" class="knight wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I122"></td><td class="img_thoth img"><img class="card" id="I44"></td><td class="img_marseilles img"><img class="card" id="I200"></td><td class="img_fuego img"><img class="card" id="I278"></td></tr>
+        
+            <tr sortA=33 sortB=66 class="card minors wands knight" id="knight_wands"><td class="head">
             <a href="#knight">Knight</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Energy, passion, inspired action, adventure, impulsiveness
+        </td><td class="info txt"><p>UPRIGHT: Energy, passion, inspired action, adventure, impulsiveness
 <br><br>
 REVERSED: Passion project, haste, scattered energy, delays, frustration
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_132">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_52">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_208">
-</td>
-
-</tr>
-
-
-<tr sortA="34" sortB="70" id="queen_wands" class="queen wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I107"></td><td class="img_thoth img"><img class="card" id="I29"></td><td class="img_marseilles img"><img class="card" id="I185"></td><td class="img_fuego img"><img class="card" id="I263"></td></tr>
+        
+            <tr sortA=34 sortB=70 class="card minors wands queen" id="queen_wands"><td class="head">
             <a href="#queen">Queen</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Courage, confidence, independence, social butterfly, determination
+        </td><td class="info txt"><p>UPRIGHT: Courage, confidence, independence, social butterfly, determination
 <br><br>
 REVERSED: Self-respect, self-confidence, introverted, re-establish sense of self
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_86">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_8">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_164">
-</td>
-
-</tr>
-
-
-<tr sortA="35" sortB="74" id="king_wands" class="king wands" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I129"></td><td class="img_thoth img"><img class="card" id="I51"></td><td class="img_marseilles img"><img class="card" id="I207"></td><td class="img_fuego img"><img class="card" id="I285"></td></tr>
+        
+            <tr sortA=35 sortB=74 class="card minors wands king" id="king_wands"><td class="head">
             <a href="#king">King</a>
             <br>of<br>
             <a href="#wands">Wands</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Natural-born leader, vision, entrepreneur, honour
+        </td><td class="info txt"><p>UPRIGHT: Natural-born leader, vision, entrepreneur, honour
 <br><br>
 REVERSED: Impulsiveness, haste, ruthless, high expectations
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_150">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_72">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_228">
-</td>
-
-</tr>
-
-
-<tr sortA="36" sortB="23" id="c1_swords" class="c1 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I85"></td><td class="img_thoth img"><img class="card" id="I7"></td><td class="img_marseilles img"><img class="card" id="I163"></td><td class="img_fuego img"><img class="card" id="I241"></td></tr>
+        
+            <tr sortA=36 sortB=23 class="card minors swords c1" id="c1_swords"><td class="head">
             <a href="#c1">Ace</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Breakthroughs, new ideas, mental clarity, success
+        </td><td class="info txt"><p>UPRIGHT: Breakthroughs, new ideas, mental clarity, success
 <br><br>
 REVERSED: Inner clarity, re-thinking an idea, clouded judgement
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_131">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_62">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_218">
-</td>
-
-</tr>
-
-
-<tr sortA="37" sortB="27" id="c2_swords" class="c2 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I132"></td><td class="img_thoth img"><img class="card" id="I54"></td><td class="img_marseilles img"><img class="card" id="I210"></td><td class="img_fuego img"><img class="card" id="I288"></td></tr>
+        
+            <tr sortA=37 sortB=27 class="card minors swords c2" id="c2_swords"><td class="head">
             <a href="#c2">Two</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Difficult decisions, weighing up options, an impasse, avoidance
+        </td><td class="info txt"><p>UPRIGHT: Difficult decisions, weighing up options, an impasse, avoidance
 <br><br>
 REVERSED: Indecision, confusion, information overload, stalemate
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_103">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_25">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_181">
-</td>
-
-</tr>
-
-
-<tr sortA="38" sortB="31" id="c3_swords" class="c3 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I110"></td><td class="img_thoth img"><img class="card" id="I32"></td><td class="img_marseilles img"><img class="card" id="I188"></td><td class="img_fuego img"><img class="card" id="I266"></td></tr>
+        
+            <tr sortA=38 sortB=31 class="card minors swords c3" id="c3_swords"><td class="head">
             <a href="#c3">Three</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Heartbreak, emotional pain, sorrow, grief, hurt
+        </td><td class="info txt"><p>UPRIGHT: Heartbreak, emotional pain, sorrow, grief, hurt
 <br><br>
 REVERSED: Negative self-talk, releasing pain, optimism, forgiveness
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_154">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_76">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_232">
-</td>
-
-</tr>
-
-
-<tr sortA="39" sortB="35" id="c4_swords" class="c4 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I139"></td><td class="img_thoth img"><img class="card" id="I61"></td><td class="img_marseilles img"><img class="card" id="I217"></td><td class="img_fuego img"><img class="card" id="I295"></td></tr>
+        
+            <tr sortA=39 sortB=35 class="card minors swords c4" id="c4_swords"><td class="head">
             <a href="#c4">Four</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Rest, relaxation, meditation, contemplation, recuperation
+        </td><td class="info txt"><p>UPRIGHT: Rest, relaxation, meditation, contemplation, recuperation
 <br><br>
 REVERSED: Exhaustion, burn-out, deep contemplation, stagnation
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_118">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_40">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_196">
-</td>
-
-</tr>
-
-
-<tr sortA="40" sortB="39" id="c5_swords" class="c5 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I142"></td><td class="img_thoth img"><img class="card" id="I64"></td><td class="img_marseilles img"><img class="card" id="I220"></td><td class="img_fuego img"><img class="card" id="I298"></td></tr>
+        
+            <tr sortA=40 sortB=39 class="card minors swords c5" id="c5_swords"><td class="head">
             <a href="#c5">Five</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Conflict, disagreements, competition, defeat, winning at all costs
+        </td><td class="info txt"><p>UPRIGHT: Conflict, disagreements, competition, defeat, winning at all costs
 <br><br>
 REVERSED: Reconciliation, making amends, past resentment
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_111">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_33">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_189">
-</td>
-
-</tr>
-
-
-<tr sortA="41" sortB="43" id="c6_swords" class="c6 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I109"></td><td class="img_thoth img"><img class="card" id="I31"></td><td class="img_marseilles img"><img class="card" id="I187"></td><td class="img_fuego img"><img class="card" id="I265"></td></tr>
+        
+            <tr sortA=41 sortB=43 class="card minors swords c6" id="c6_swords"><td class="head">
             <a href="#c6">Six</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Transition, change, rite of passage, releasing baggage.
+        </td><td class="info txt"><p>UPRIGHT: Transition, change, rite of passage, releasing baggage.
 <br><br>
 REVERSED: Personal transition, resistance to change, unfinished business
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_93">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_15">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_171">
-</td>
-
-</tr>
-
-
-<tr sortA="42" sortB="47" id="c7_swords" class="c7 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I105"></td><td class="img_thoth img"><img class="card" id="I27"></td><td class="img_marseilles img"><img class="card" id="I183"></td><td class="img_fuego img"><img class="card" id="I261"></td></tr>
+        
+            <tr sortA=42 sortB=47 class="card minors swords c7" id="c7_swords"><td class="head">
             <a href="#c7">Seven</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Betrayal, deception, getting away with something, acting strategically
+        </td><td class="info txt"><p>UPRIGHT: Betrayal, deception, getting away with something, acting strategically
 <br><br>
 REVERSED: Imposter syndrome, self-deceit, keeping secrets
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_137">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_57">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_213">
-</td>
-
-</tr>
-
-
-<tr sortA="43" sortB="51" id="c8_swords" class="c8 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I98"></td><td class="img_thoth img"><img class="card" id="I20"></td><td class="img_marseilles img"><img class="card" id="I176"></td><td class="img_fuego img"><img class="card" id="I254"></td></tr>
+        
+            <tr sortA=43 sortB=51 class="card minors swords c8" id="c8_swords"><td class="head">
             <a href="#c8">Eight</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Negative thoughts, self-imposed restriction, imprisonment, victim mentality
+        </td><td class="info txt"><p>UPRIGHT: Negative thoughts, self-imposed restriction, imprisonment, victim mentality
 <br><br>
 REVERSED: Self-limiting beliefs, inner critic, releasing negative thoughts, open to new perspectives
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_100">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_22">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_178">
-</td>
-
-</tr>
-
-
-<tr sortA="44" sortB="55" id="c9_swords" class="c9 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I101"></td><td class="img_thoth img"><img class="card" id="I23"></td><td class="img_marseilles img"><img class="card" id="I179"></td><td class="img_fuego img"><img class="card" id="I257"></td></tr>
+        
+            <tr sortA=44 sortB=55 class="card minors swords c9" id="c9_swords"><td class="head">
             <a href="#c9">Nine</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Anxiety, worry, fear, depression, nightmares
+        </td><td class="info txt"><p>UPRIGHT: Anxiety, worry, fear, depression, nightmares
 <br><br>
 REVERSED: Inner turmoil, deep-seated fears, secrets, releasing worry
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_110">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_32">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_188">
-</td>
-
-</tr>
-
-
-<tr sortA="45" sortB="59" id="c10_swords" class="c10 swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I144"></td><td class="img_thoth img"><img class="card" id="I66"></td><td class="img_marseilles img"><img class="card" id="I222"></td><td class="img_fuego img"><img class="card" id="I300"></td></tr>
+        
+            <tr sortA=45 sortB=59 class="card minors swords c10" id="c10_swords"><td class="head">
             <a href="#c10">Ten</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Painful endings, deep wounds, betrayal, loss, crisis
+        </td><td class="info txt"><p>UPRIGHT: Painful endings, deep wounds, betrayal, loss, crisis
 <br><br>
 REVERSED: Recovery, regeneration, resisting an inevitable end
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_83">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_5">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_161">
-</td>
-
-</tr>
-
-
-<tr sortA="46" sortB="63" id="page_swords" class="page swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I115"></td><td class="img_thoth img"><img class="card" id="I37"></td><td class="img_marseilles img"><img class="card" id="I193"></td><td class="img_fuego img"><img class="card" id="I271"></td></tr>
+        
+            <tr sortA=46 sortB=63 class="card minors swords page" id="page_swords"><td class="head">
             <a href="#page">Page</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: New ideas, curiosity, thirst for knowledge, new ways of communicating
+        </td><td class="info txt"><p>UPRIGHT: New ideas, curiosity, thirst for knowledge, new ways of communicating
 <br><br>
 REVERSED: Self-expression, all talk and no action, haphazard action, haste
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_84">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_6">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_162">
-</td>
-
-</tr>
-
-
-<tr sortA="47" sortB="67" id="knight_swords" class="knight swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I119"></td><td class="img_thoth img"><img class="card" id="I41"></td><td class="img_marseilles img"><img class="card" id="I197"></td><td class="img_fuego img"><img class="card" id="I275"></td></tr>
+        
+            <tr sortA=47 sortB=67 class="card minors swords knight" id="knight_swords"><td class="head">
             <a href="#knight">Knight</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Ambitious, action-oriented, driven to succeed, fast-thinking
+        </td><td class="info txt"><p>UPRIGHT: Ambitious, action-oriented, driven to succeed, fast-thinking
 <br><br>
 REVERSED: Restless, unfocused, impulsive, burn-out
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_95">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_17">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_173">
-</td>
-
-</tr>
-
-
-<tr sortA="48" sortB="71" id="queen_swords" class="queen swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I114"></td><td class="img_thoth img"><img class="card" id="I36"></td><td class="img_marseilles img"><img class="card" id="I192"></td><td class="img_fuego img"><img class="card" id="I270"></td></tr>
+        
+            <tr sortA=48 sortB=71 class="card minors swords queen" id="queen_swords"><td class="head">
             <a href="#queen">Queen</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Independent, unbiased judgement, clear boundaries, direct communication
+        </td><td class="info txt"><p>UPRIGHT: Independent, unbiased judgement, clear boundaries, direct communication
 <br><br>
 REVERSED: Overly-emotional, easily influenced, bitchy, cold-hearted
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_151">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_73">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_229">
-</td>
-
-</tr>
-
-
-<tr sortA="49" sortB="75" id="king_swords" class="king swords" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I120"></td><td class="img_thoth img"><img class="card" id="I42"></td><td class="img_marseilles img"><img class="card" id="I198"></td><td class="img_fuego img"><img class="card" id="I276"></td></tr>
+        
+            <tr sortA=49 sortB=75 class="card minors swords king" id="king_swords"><td class="head">
             <a href="#king">King</a>
             <br>of<br>
             <a href="#swords">Swords</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Mental clarity, intellectual power, authority, truth
+        </td><td class="info txt"><p>UPRIGHT: Mental clarity, intellectual power, authority, truth
 <br><br>
 REVERSED: Quiet power, inner truth, misuse of power, manipulation
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_116">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_38">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_194">
-</td>
-
-</tr>
-
-
-<tr sortA="50" sortB="24" id="c1_cups" class="c1 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I103"></td><td class="img_thoth img"><img class="card" id="I25"></td><td class="img_marseilles img"><img class="card" id="I181"></td><td class="img_fuego img"><img class="card" id="I259"></td></tr>
+        
+            <tr sortA=50 sortB=24 class="card minors cups c1" id="c1_cups"><td class="head">
             <a href="#c1">Ace</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Love, new relationships, compassion, creativity.
+        </td><td class="info txt"><p>UPRIGHT: Love, new relationships, compassion, creativity.
 <br><br>
 REVERSED: Self-love, intuition, repressed emotions.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_145">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_66">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_222">
-</td>
-
-</tr>
-
-
-<tr sortA="51" sortB="28" id="c2_cups" class="c2 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I125"></td><td class="img_thoth img"><img class="card" id="I47"></td><td class="img_marseilles img"><img class="card" id="I203"></td><td class="img_fuego img"><img class="card" id="I281"></td></tr>
+        
+            <tr sortA=51 sortB=28 class="card minors cups c2" id="c2_cups"><td class="head">
             <a href="#c2">Two</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Unified love, partnership, mutual attraction
+        </td><td class="info txt"><p>UPRIGHT: Unified love, partnership, mutual attraction
 <br><br>
 REVERSED: Self-love, break-ups, disharmony, distrust.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_97">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_19">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_175">
-</td>
-
-</tr>
-
-
-<tr sortA="52" sortB="32" id="c3_cups" class="c3 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I153"></td><td class="img_thoth img"><img class="card" id="I75"></td><td class="img_marseilles img"><img class="card" id="I231"></td><td class="img_fuego img"><img class="card" id="I309"></td></tr>
+        
+            <tr sortA=52 sortB=32 class="card minors cups c3" id="c3_cups"><td class="head">
             <a href="#c3">Three</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Celebration, friendship, creativity, collaborations.
+        </td><td class="info txt"><p>UPRIGHT: Celebration, friendship, creativity, collaborations.
 <br><br>
 REVERSED: Independence, alone time, hardcore partying, ‘three’s a crowd’.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_91">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_13">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_169">
-</td>
-
-</tr>
-
-
-<tr sortA="53" sortB="36" id="c4_cups" class="c4 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I80"></td><td class="img_thoth img"><img class="card" id="I2"></td><td class="img_marseilles img"><img class="card" id="I158"></td><td class="img_fuego img"><img class="card" id="I236"></td></tr>
+        
+            <tr sortA=53 sortB=36 class="card minors cups c4" id="c4_cups"><td class="head">
             <a href="#c4">Four</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Meditation, contemplation, apathy, reevaluation.
+        </td><td class="info txt"><p>UPRIGHT: Meditation, contemplation, apathy, reevaluation.
 <br><br>
 REVERSED: Retreat, withdrawal, checking in for alignment.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_123">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_45">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_201">
-</td>
-
-</tr>
-
-
-<tr sortA="54" sortB="40" id="c5_cups" class="c5 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I154"></td><td class="img_thoth img"><img class="card" id="I76"></td><td class="img_marseilles img"><img class="card" id="I232"></td><td class="img_fuego img"><img class="card" id="I310"></td></tr>
+        
+            <tr sortA=54 sortB=40 class="card minors cups c5" id="c5_cups"><td class="head">
             <a href="#c5">Five</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Regret, failure, disappointment, pessimism.
+        </td><td class="info txt"><p>UPRIGHT: Regret, failure, disappointment, pessimism.
 <br><br>
 REVERSED: Personal setbacks, self-forgiveness, moving on.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_79">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_1">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_157">
-</td>
-
-</tr>
-
-
-<tr sortA="55" sortB="44" id="c6_cups" class="c6 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I83"></td><td class="img_thoth img"><img class="card" id="I5"></td><td class="img_marseilles img"><img class="card" id="I161"></td><td class="img_fuego img"><img class="card" id="I239"></td></tr>
+        
+            <tr sortA=55 sortB=44 class="card minors cups c6" id="c6_cups"><td class="head">
             <a href="#c6">Six</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Revisiting the past, childhood memories, innocence, joy.
+        </td><td class="info txt"><p>UPRIGHT: Revisiting the past, childhood memories, innocence, joy.
 <br><br>
 REVERSED: Living in the past, forgiveness, lacking playfulness.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_80">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_2">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_158">
-</td>
-
-</tr>
-
-
-<tr sortA="56" sortB="48" id="c7_cups" class="c7 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I128"></td><td class="img_thoth img"><img class="card" id="I50"></td><td class="img_marseilles img"><img class="card" id="I206"></td><td class="img_fuego img"><img class="card" id="I284"></td></tr>
+        
+            <tr sortA=56 sortB=48 class="card minors cups c7" id="c7_cups"><td class="head">
             <a href="#c7">Seven</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Opportunities, choices, wishful thinking, illusion.
+        </td><td class="info txt"><p>UPRIGHT: Opportunities, choices, wishful thinking, illusion.
 <br><br>
 REVERSED: Alignment, personal values, overwhelmed by choices.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_124">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_46">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_202">
-</td>
-
-</tr>
-
-
-<tr sortA="57" sortB="52" id="c8_cups" class="c8 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I106"></td><td class="img_thoth img"><img class="card" id="I28"></td><td class="img_marseilles img"><img class="card" id="I184"></td><td class="img_fuego img"><img class="card" id="I262"></td></tr>
+        
+            <tr sortA=57 sortB=52 class="card minors cups c8" id="c8_cups"><td class="head">
             <a href="#c8">Eight</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Disappointment, abandonment, withdrawal, escapism.
+        </td><td class="info txt"><p>UPRIGHT: Disappointment, abandonment, withdrawal, escapism.
 <br><br>
 REVERSED: Trying one more time, indecision, aimless drifting, walking away.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_115">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_37">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_193">
-</td>
-
-</tr>
-
-
-<tr sortA="58" sortB="56" id="c9_cups" class="c9 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I117"></td><td class="img_thoth img"><img class="card" id="I39"></td><td class="img_marseilles img"><img class="card" id="I195"></td><td class="img_fuego img"><img class="card" id="I273"></td></tr>
+        
+            <tr sortA=58 sortB=56 class="card minors cups c9" id="c9_cups"><td class="head">
             <a href="#c9">Nine</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Contentment, satisfaction, gratitude, wish come true.
+        </td><td class="info txt"><p>UPRIGHT: Contentment, satisfaction, gratitude, wish come true.
 <br><br>
 REVERSED: Inner happiness, materialism, dissatisfaction, indulgence.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_130">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_51">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_207">
-</td>
-
-</tr>
-
-
-<tr sortA="59" sortB="60" id="c10_cups" class="c10 cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I89"></td><td class="img_thoth img"><img class="card" id="I11"></td><td class="img_marseilles img"><img class="card" id="I167"></td><td class="img_fuego img"><img class="card" id="I245"></td></tr>
+        
+            <tr sortA=59 sortB=60 class="card minors cups c10" id="c10_cups"><td class="head">
             <a href="#c10">Ten</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Divine love, blissful relationships, harmony, alignment.
+        </td><td class="info txt"><p>UPRIGHT: Divine love, blissful relationships, harmony, alignment.
 <br><br>
 REVERSED: Disconnection, misaligned values, struggling relationships.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_121">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_43">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_199">
-</td>
-
-</tr>
-
-
-<tr sortA="60" sortB="64" id="page_cups" class="page cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I143"></td><td class="img_thoth img"><img class="card" id="I65"></td><td class="img_marseilles img"><img class="card" id="I221"></td><td class="img_fuego img"><img class="card" id="I299"></td></tr>
+        
+            <tr sortA=60 sortB=64 class="card minors cups page" id="page_cups"><td class="head">
             <a href="#page">Page</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Creative opportunities, intuitive messages, curiosity, possibility.
+        </td><td class="info txt"><p>UPRIGHT: Creative opportunities, intuitive messages, curiosity, possibility.
 <br><br>
 REVERSED: New ideas, doubting intuition, creative blocks, emotional immaturity.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_143">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_64">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_220">
-</td>
-
-</tr>
-
-
-<tr sortA="61" sortB="68" id="knight_cups" class="knight cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I81"></td><td class="img_thoth img"><img class="card" id="I3"></td><td class="img_marseilles img"><img class="card" id="I159"></td><td class="img_fuego img"><img class="card" id="I237"></td></tr>
+        
+            <tr sortA=61 sortB=68 class="card minors cups knight" id="knight_cups"><td class="head">
             <a href="#knight">Knight</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Creativity, romance, charm, imagination, beauty.
+        </td><td class="info txt"><p>UPRIGHT: Creativity, romance, charm, imagination, beauty.
 <br><br>
 REVERSED: Overactive imagination, unrealistic, jealous, moody.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_152">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_74">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_230">
-</td>
-
-</tr>
-
-
-<tr sortA="62" sortB="72" id="queen_cups" class="queen cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I138"></td><td class="img_thoth img"><img class="card" id="I60"></td><td class="img_marseilles img"><img class="card" id="I216"></td><td class="img_fuego img"><img class="card" id="I294"></td></tr>
+        
+            <tr sortA=62 sortB=72 class="card minors cups queen" id="queen_cups"><td class="head">
             <a href="#queen">Queen</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Compassionate, caring, emotionally stable, intuitive, in flow.
+        </td><td class="info txt"><p>UPRIGHT: Compassionate, caring, emotionally stable, intuitive, in flow.
 <br><br>
 REVERSED: Inner feelings, self-care, self-love, co-dependency.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_149">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_71">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_227">
-</td>
-
-</tr>
-
-
-<tr sortA="63" sortB="76" id="king_cups" class="king cups" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I79"></td><td class="img_thoth img"><img class="card" id="I1"></td><td class="img_marseilles img"><img class="card" id="I157"></td><td class="img_fuego img"><img class="card" id="I235"></td></tr>
+        
+            <tr sortA=63 sortB=76 class="card minors cups king" id="king_cups"><td class="head">
             <a href="#king">King</a>
             <br>of<br>
             <a href="#cups">Cups</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Emotionally balanced, compassionate, diplomatic.
+        </td><td class="info txt"><p>UPRIGHT: Emotionally balanced, compassionate, diplomatic.
 <br><br>
 REVERSED: Self-compassion, inner feelings, moodiness, emotionally manipula
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_138">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_58">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_214">
-</td>
-
-</tr>
-
-
-<tr sortA="64" sortB="25" id="c1_coins" class="c1 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I134"></td><td class="img_thoth img"><img class="card" id="I56"></td><td class="img_marseilles img"><img class="card" id="I212"></td><td class="img_fuego img"><img class="card" id="I290"></td></tr>
+        
+            <tr sortA=64 sortB=25 class="card minors coins c1" id="c1_coins"><td class="head">
             <a href="#c1">Ace</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: A new financial or career opportunity, manifestation, abundance.
+        </td><td class="info txt"><p>UPRIGHT: A new financial or career opportunity, manifestation, abundance.
 <br><br>
 REVERSED: Lost opportunity, lack of planning and foresight.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_142">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_63">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_219">
-</td>
-
-</tr>
-
-
-<tr sortA="65" sortB="29" id="c2_coins" class="c2 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I104"></td><td class="img_thoth img"><img class="card" id="I26"></td><td class="img_marseilles img"><img class="card" id="I182"></td><td class="img_fuego img"><img class="card" id="I260"></td></tr>
+        
+            <tr sortA=65 sortB=29 class="card minors coins c2" id="c2_coins"><td class="head">
             <a href="#c2">Two</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Multiple priorities, time management, prioritisation, adaptability.
+        </td><td class="info txt"><p>UPRIGHT: Multiple priorities, time management, prioritisation, adaptability.
 <br><br>
 REVERSED: Over-committed, disorganisation, reprioritisation.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_133">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_53">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_209">
-</td>
-
-</tr>
-
-
-<tr sortA="66" sortB="33" id="c3_coins" class="c3 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I116"></td><td class="img_thoth img"><img class="card" id="I38"></td><td class="img_marseilles img"><img class="card" id="I194"></td><td class="img_fuego img"><img class="card" id="I272"></td></tr>
+        
+            <tr sortA=66 sortB=33 class="card minors coins c3" id="c3_coins"><td class="head">
             <a href="#c3">Three</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Teamwork, collaboration, learning, implementation.
+        </td><td class="info txt"><p>UPRIGHT: Teamwork, collaboration, learning, implementation.
 <br><br>
 REVERSED: Disharmony, misalignment, working alone.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_153">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_75">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_231">
-</td>
-
-</tr>
-
-
-<tr sortA="67" sortB="37" id="c4_coins" class="c4 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I124"></td><td class="img_thoth img"><img class="card" id="I46"></td><td class="img_marseilles img"><img class="card" id="I202"></td><td class="img_fuego img"><img class="card" id="I280"></td></tr>
+        
+            <tr sortA=67 sortB=37 class="card minors coins c4" id="c4_coins"><td class="head">
             <a href="#c4">Four</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Saving money, security, conservatism, scarcity, control.
+        </td><td class="info txt"><p>UPRIGHT: Saving money, security, conservatism, scarcity, control.
 <br><br>
 REVERSED: Over-spending, greed, self-protection.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_141">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_61">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_217">
-</td>
-
-</tr>
-
-
-<tr sortA="68" sortB="41" id="c5_coins" class="c5 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I152"></td><td class="img_thoth img"><img class="card" id="I74"></td><td class="img_marseilles img"><img class="card" id="I230"></td><td class="img_fuego img"><img class="card" id="I308"></td></tr>
+        
+            <tr sortA=68 sortB=41 class="card minors coins c5" id="c5_coins"><td class="head">
             <a href="#c5">Five</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Financial loss, poverty, lack mindset, isolation, worry.
+        </td><td class="info txt"><p>UPRIGHT: Financial loss, poverty, lack mindset, isolation, worry.
 <br><br>
 REVERSED: Recovery from financial loss, spiritual poverty.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_82">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_4">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_160">
-</td>
-
-</tr>
-
-
-<tr sortA="69" sortB="45" id="c6_coins" class="c6 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I133"></td><td class="img_thoth img"><img class="card" id="I55"></td><td class="img_marseilles img"><img class="card" id="I211"></td><td class="img_fuego img"><img class="card" id="I289"></td></tr>
+        
+            <tr sortA=69 sortB=45 class="card minors coins c6" id="c6_coins"><td class="head">
             <a href="#c6">Six</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Giving, receiving, sharing wealth, generosity, charity.
+        </td><td class="info txt"><p>UPRIGHT: Giving, receiving, sharing wealth, generosity, charity.
 <br><br>
 REVERSED: Self-care, unpaid debts, one-sided charity.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_112">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_34">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_190">
-</td>
-
-</tr>
-
-
-<tr sortA="70" sortB="49" id="c7_coins" class="c7 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I155"></td><td class="img_thoth img"><img class="card" id="I77"></td><td class="img_marseilles img"><img class="card" id="I233"></td><td class="img_fuego img"><img class="card" id="I311"></td></tr>
+        
+            <tr sortA=70 sortB=49 class="card minors coins c7" id="c7_coins"><td class="head">
             <a href="#c7">Seven</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Long-term view, sustainable results, perseverance, investment.
+        </td><td class="info txt"><p>UPRIGHT: Long-term view, sustainable results, perseverance, investment.
 <br><br>
 REVERSED: Lack of long-term vision, limited success or reward.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_102">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_24">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_180">
-</td>
-
-</tr>
-
-
-<tr sortA="71" sortB="53" id="c8_coins" class="c8 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I100"></td><td class="img_thoth img"><img class="card" id="I22"></td><td class="img_marseilles img"><img class="card" id="I178"></td><td class="img_fuego img"><img class="card" id="I256"></td></tr>
+        
+            <tr sortA=71 sortB=53 class="card minors coins c8" id="c8_coins"><td class="head">
             <a href="#c8">Eight</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Apprenticeship, repetitive tasks, mastery, skill development.
+        </td><td class="info txt"><p>UPRIGHT: Apprenticeship, repetitive tasks, mastery, skill development.
 <br><br>
 REVERSED: Self-development, perfectionism, misdirected activity.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_125">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_47">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_203">
-</td>
-
-</tr>
-
-
-<tr sortA="72" sortB="57" id="c9_coins" class="c9 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I136"></td><td class="img_thoth img"><img class="card" id="I58"></td><td class="img_marseilles img"><img class="card" id="I214"></td><td class="img_fuego img"><img class="card" id="I292"></td></tr>
+        
+            <tr sortA=72 sortB=57 class="card minors coins c9" id="c9_coins"><td class="head">
             <a href="#c9">Nine</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Abundance, luxury, self-sufficiency, financial independence.
+        </td><td class="info txt"><p>UPRIGHT: Abundance, luxury, self-sufficiency, financial independence.
 <br><br>
 REVERSED: Self-worth, over-investment in work, hustling.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_117">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_39">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_195">
-</td>
-
-</tr>
-
-
-<tr sortA="73" sortB="61" id="c10_coins" class="c10 coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I126"></td><td class="img_thoth img"><img class="card" id="I48"></td><td class="img_marseilles img"><img class="card" id="I204"></td><td class="img_fuego img"><img class="card" id="I282"></td></tr>
+        
+            <tr sortA=73 sortB=61 class="card minors coins c10" id="c10_coins"><td class="head">
             <a href="#c10">Ten</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Wealth, financial security, family, long-term success, contribution.
+        </td><td class="info txt"><p>UPRIGHT: Wealth, financial security, family, long-term success, contribution.
 <br><br>
 REVERSED: The dark side of wealth, financial failure or loss.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_81">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_3">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_159">
-</td>
-
-</tr>
-
-
-<tr sortA="74" sortB="65" id="page_coins" class="page coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I146"></td><td class="img_thoth img"><img class="card" id="I68"></td><td class="img_marseilles img"><img class="card" id="I224"></td><td class="img_fuego img"><img class="card" id="I302"></td></tr>
+        
+            <tr sortA=74 sortB=65 class="card minors coins page" id="page_coins"><td class="head">
             <a href="#page">Page</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Manifestation, financial opportunity, skill development.
+        </td><td class="info txt"><p>UPRIGHT: Manifestation, financial opportunity, skill development.
 <br><br>
 REVERSED: Lack of progress, procrastination, learn from failure.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_106">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_28">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_184">
-</td>
-
-</tr>
-
-
-<tr sortA="75" sortB="69" id="knight_coins" class="knight coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I112"></td><td class="img_thoth img"><img class="card" id="I34"></td><td class="img_marseilles img"><img class="card" id="I190"></td><td class="img_fuego img"><img class="card" id="I268"></td></tr>
+        
+            <tr sortA=75 sortB=69 class="card minors coins knight" id="knight_coins"><td class="head">
             <a href="#knight">Knight</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Hard work, productivity, routine, conservatism.
+        </td><td class="info txt"><p>UPRIGHT: Hard work, productivity, routine, conservatism.
 <br><br>
 REVERSED: Self-discipline, boredom, feeling ‘stuck’, perfectionism.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_109">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_31">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_187">
-</td>
-
-</tr>
-
-
-<tr sortA="76" sortB="73" id="queen_coins" class="queen coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I90"></td><td class="img_thoth img"><img class="card" id="I12"></td><td class="img_marseilles img"><img class="card" id="I168"></td><td class="img_fuego img"><img class="card" id="I246"></td></tr>
+        
+            <tr sortA=76 sortB=73 class="card minors coins queen" id="queen_coins"><td class="head">
             <a href="#queen">Queen</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Nurturing, practical, providing financially, a working parent.
+        </td><td class="info txt"><p>UPRIGHT: Nurturing, practical, providing financially, a working parent.
 <br><br>
 REVERSED: Financial independence, self-care, work-home conflict.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_113">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_35">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_191">
-</td>
-
-</tr>
-
-
-<tr sortA="77" sortB="77" id="king_coins" class="king coins" >
-    
-<td class="head" >
-    
+</p></td><td class="img_rider img"><img class="card" id="I156"></td><td class="img_thoth img"><img class="card" id="I78"></td><td class="img_marseilles img"><img class="card" id="I234"></td><td class="img_fuego img"><img class="card" id="I312"></td></tr>
+        
+            <tr sortA=77 sortB=77 class="card minors coins king" id="king_coins"><td class="head">
             <a href="#king">King</a>
             <br>of<br>
             <a href="#coins">Coins</a>
-        
-</td>
-
-
-<td class="info" >
-    
-                    <p class=text>UPRIGHT: Wealth, business, leadership, security, discipline, abundance.
+        </td><td class="info txt"><p>UPRIGHT: Wealth, business, leadership, security, discipline, abundance.
 <br><br>
 REVERSED: Financially inept, obsessed with wealth and status, stubborn.
 
-</p>
-                    
-</td>
-
-
-<td class="img_rider" >
-    <img class="card img_126">
-</td>
-
-
-<td class="img_thoth" >
-    <img class="card img_48">
-</td>
-
-
-<td class="img_fuego" >
-    <img class="card img_204">
-</td>
-
-</tr>
-
+</p></td><td class="img_rider img"><img class="card" id="I113"></td><td class="img_thoth img"><img class="card" id="I35"></td><td class="img_marseilles img"><img class="card" id="I191"></td><td class="img_fuego img"><img class="card" id="I269"></td></tr>
+        
                     </table>
                 </div>
             </div>
         </div>
-        <link rel="stylesheet" href="img_thoth.css"><link rel="stylesheet" href="img_rider.css"><link rel="stylesheet" href="img_fuego.css">
+        <link rel="stylesheet" href="img_thoth_cups.css"><link rel="stylesheet" href="img_thoth_trump.css"><link rel="stylesheet" href="img_thoth_wands.css"><link rel="stylesheet" href="img_thoth_coins.css"><link rel="stylesheet" href="img_thoth_swords.css"><link rel="stylesheet" href="img_rider_cups.css"><link rel="stylesheet" href="img_rider_trump.css"><link rel="stylesheet" href="img_rider_wands.css"><link rel="stylesheet" href="img_rider_coins.css"><link rel="stylesheet" href="img_rider_swords.css"><link rel="stylesheet" href="img_marseilles_cups.css"><link rel="stylesheet" href="img_marseilles_trump.css"><link rel="stylesheet" href="img_marseilles_wands.css"><link rel="stylesheet" href="img_marseilles_coins.css"><link rel="stylesheet" href="img_marseilles_swords.css"><link rel="stylesheet" href="img_fuego_cups.css"><link rel="stylesheet" href="img_fuego_trump.css"><link rel="stylesheet" href="img_fuego_wands.css"><link rel="stylesheet" href="img_fuego_coins.css"><link rel="stylesheet" href="img_fuego_swords.css">
     </body>
 </html>
